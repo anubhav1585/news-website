@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load static %}
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> ABOUT </title>
+
+    <link rel="stylesheet" href=" {% static 'css/bootstrap.css' %} ">
+    <!--font awsome-->
+    <script src="{% static 'js/all.min.css' %}"></script>
+    <!--google font-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Langar&display=swap" rel="stylesheet">
+</head>
+<style>
+    #third {
+        background: url({% static "images/newspaper.jpg" %});
+    }
+</style>
+
+<body id="third">
+
+
+    <!-- Navigation -->
+    <nav style="border: 2px solid black;" class="navbar rounded  navbar-expand-lg  bg-warning navbar-light  ">
+        <div class="container">
+            <i class="fa fa-3x fa-newspaper mr-3 "></i>
+            <a style="font-size: 1.7rem" class="navbar-brand text-dark " href="{% url 'home' %}"> वार्त्ता </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-dark ml-auto">
+                    <li class="  nav-item ">
+                        <a class="  nav-link" href="{% url 'home' %}"> <i class="fa fa-fw  fa-home"></i> HOME
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class=" nav-item">
+                        <a class="nav-link" href=" {% url 'about' %} "> <i class="fa fa-fw fa-book "></i> ABOUT</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"> <i class="fa fa-wa fa-phone "></i> CONTACT</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <!--  Content -->
+    <div class="container">
+
+        <div class="row">
+            <div class=" col-md-12 m-3 ">
+                <h1 style=" font-family: 'Times New Roman', Times, serif; color:black; background-color:rgb(218, 212, 212); border:5px black solid "
+                    class="  mt-4 text-center"> ABOUT
+                </h1>
+            </div>
+        </div>
+
+        <div class="card text-center">
+            <div style=" color:dodgerblue; font-size: 2rem; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif "
+                class="card-header">
+                vArttA
+            </div>
+            <div class="card-body">
+                <h3 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color:orange"
+                    class="card-title"> INTRO </h5>
+                    <p style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;"
+                        class="card-text"> vartta is a News Aggregator Web App. It is a web application which aggregates
+                        data (news articles) from multiple websites. Then presents the data in one location.
+
+                        News aggregator service is a very important start of the day.
+
+                        There are various publications and news sites online. They publish their content on multiple
+                        platforms. Now, imagine when you open 10-20 news sites every day. The time you waste to gain
+                        information. Information gain is everything in today’s world.
+
+                    </p>
+                    <br> 
+                    <p style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;" > It can give you leverage over those who don’t have it. Now, is there a way we can make it easier? Yes!! </p>   
+                    <p style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;" > A news aggregator makes this task easier. In a news aggregator, you can select the websites you want to follow. Then the news aggregator collects the articles for you. And, you are just a click away to get information from various websites.
+
+                        This task otherwise takes too much time on our schedule.</p>
+            </div>
+
+        </div>
+
+
+
+
+
+    </div>
+
+
+
+
+    <!-- Footer -->
+    <footer class=" fixed-bottom page-footer font-small blue">
+
+        <!-- Copyright -->
+        <div class="footer-copyright alert-dark rounded  text-center py-3">© 2020 Copyright:
+            <a href="{% url 'home' %}"> vArttA </a>
+        </div>
+        <!-- Copyright -->
+
+    </footer>
+    <!-- Footer -->
+
+
+
+    <!-- java script -->
+    <script src="{% static 'js/jq.js' %}"></script>
+    <script src="{% static 'js/popper.js'%}"></script>
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+    <script src="{% static 'js/all.min.js' %}"></script>
+</body>

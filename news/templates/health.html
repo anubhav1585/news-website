@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load static %}
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> HOME </title>
+
+  <link rel="stylesheet" href=" {% static 'css/bootstrap.css' %} ">
+  <!--font awsome-->
+  <script src="{% static 'js/all.min.css' %}"></script>
+  <!--google font-->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Langar&display=swap" rel="stylesheet">
+</head>
+<style>
+  #third {
+    background: url({% static "images/newspaper.jpg" %});}
+  
+</style>
+
+<body id="third">
+ 
+
+  <!-- Navigation -->
+  <nav style="border: 2px solid black;" class="navbar rounded  navbar-expand-lg  bg-warning navbar-light  ">
+    <div class="container">
+      <i  class="fa fa-3x fa-newspaper mr-3 "></i>
+      <a style="font-size: 1.7rem" class="navbar-brand text-dark " href="{% url 'home' %}">  वार्त्ता </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav text-dark ml-auto">
+          <li class="  nav-item "> 
+              <a class="  nav-link" href="{% url 'home' %}"> <i class="fa fa-fw  fa-home"></i> HOME
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class=" nav-item">
+            <a class="nav-link" href=" {% url 'about' %} "> <i class="fa fa-fw fa-book "></i> ABOUT</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link" href="#"> <i class="fa fa-wa fa-phone "></i> CONTACT</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!--  Content -->
+  <div class="container">
+
+    <div class="row">
+      <div class=" col-md-12 m-3 ">
+        <h1
+          style=" font-family: 'Times New Roman', Times, serif; color:black; background-color:rgb(218, 212, 212); border:5px black solid "
+          class="  mt-4 text-center">  HEALTH
+        </h1>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <!-- Blog Entries Column -->
+      <div class="col-md-8">
+
+
+
+        <!-- Blog Post -->
+        {% for new, des,i,p in mylist %}
+        <div style="background-color: rgb(218, 212, 212); border:5px solid black " class="card  mb-5 ">
+
+          <img style="height: 500px;"  src="{{i}}" class="  p-4  img-fluid " alt="loading....">
+
+
+          <div class="card-body">
+            <h2 style="font-family: Arial, Helvetica, sans-serif;"  class=" card-title">{{new|upper}}</h2>
+            <p class=" m-auto card-text">{{des}} </p>
+          </div>
+          <div class="card-footer text-muted">
+            {{p}}
+          </div>
+        </div>
+        {% endfor %}
+
+
+
+
+
+        <!-- Pagination -->
+        <ul class="pagination justify-content-center mb-4">
+          <li class="page-item">
+            <a class="page-link" href="#">Older</a>
+          </li>
+          <li class="page-item disabled">
+            <a class="page-link" href="#">Newer </a>
+          </li>
+        </ul>
+
+      </div>
+
+      <!-- Sidebar Widgets Column -->
+      <div class="  col-md-4">
+
+
+
+        <!-- Categories Widget -->
+        <div style="background-color: rgb(218, 212, 212); border: 5px black solid; " class="card">
+          <h5 style="border: 2px solid black;" class=" text-center text-success card-header">Categories</h5>
+
+          <div class="card-body">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="list-group">
+                  <a href="{% url 'sport' %}" class="list-group-item list-group-item-action " aria-current="true"> <i class=" mr-1 fa fa-baseball-ball "></i>
+                    SPORTS
+                  </a>
+                  <a href="{% url 'health' %}" class="list-group-item list-group-item-action"> <i class=" fa-1x mr-1 fa-medkit fa "></i>  HEALTH</a>
+                  <a href="{% url 'corona' %}" class="list-group-item list-group-item-action"> <i class=" fa  fa-clinic-medical fa-1x mr-1 "></i> CORONA</a>
+                  <a href="{% url 'technology' %}" class="list-group-item list-group-item-action"> <i class=" fa fa-tablet fa-1x mr-1 "></i> TECHNOLOGY</a>
+                  <a href="{% url 'business' %}" class="list-group-item list-group-item-action"> <i class=" fa  fa-business-time   fa-1x mr-1 "></i> BUSSINESS</a>
+                  <a href="{% url 'literature' %}" class="list-group-item list-group-item-action">  <i class=" fa fa-pen-fancy fa-1x mr-1 "></i> LITERATURE </a>
+                  <a href="{% url 'politics' %}" class="list-group-item list-group-item-action"> <i class=" fa fa-vote-yea fa-1x mr-1 "></i>  POLITICS</a>
+                  <a href="{% url 'entertainment' %}" class="list-group-item list-group-item-action" 
+                    >  <i class=" fa fa-satellite-dish fa-1x mr-1 "></i> ENTERTAINMENT </a>
+                  <a href="{% url 'sensex' %}" class="list-group-item list-group-item-action"> <i class=" fa-1x mr-1 fa-money-bill fa "></i> SENSEX </a>  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+    <!-- row -->
+
+  </div>
+  <!--container -->
+
+
+  <!-- Footer -->
+  <footer class="page-footer font-small blue">
+
+    <!-- Copyright -->
+    <div class="footer-copyright alert-dark rounded  text-center py-3">© 2020 Copyright:
+      <a href="#"> MDBootstrap.com</a>
+    </div>
+    <!-- Copyright -->
+
+  </footer>
+  <!-- Footer -->
+
+
+
+  <!-- java script -->
+  <script src="{% static 'js/jq.js' %}"></script>
+  <script src="{% static 'js/popper.js'%}"></script>
+  <script src="{% static 'js/bootstrap.js' %}"></script>
+  <script src="{% static 'js/all.min.js' %}"></script>
+</body>
